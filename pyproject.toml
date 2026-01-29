@@ -1,0 +1,16 @@
+[project]
+name = "project-k-kupitman"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.42.11",
+    "dotenv>=0.9.9",
+    "flask>=3.1.2",
+    "pandas>=2.3.3",
+    "pyarrow>=22.0.0",
+    "python-dotenv>=1.2.1",
+    "redis>=7.1.0",
+    "scikit-learn>=1.8.0",
+]

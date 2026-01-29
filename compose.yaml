@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "${SERVICE_PORT:-8000}:${SERVICE_PORT:-8000}"
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      SERVICE_PORT: ${SERVICE_PORT:-8000}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${SERVICE_PORT:-8000}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
